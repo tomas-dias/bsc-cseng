@@ -1,0 +1,60 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile="Immersive" version="3.3" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd">
+    <Scene>
+        <PointLight on='true' intensity='1.0' color='1.0 1.0 0.75' location='10 10 0' radius='100' shadowIntensity="1.0"></PointLight>
+        <Viewpoint position="-11.34396 9.72137 24.68510" orientation="-0.61953 -0.77538 -0.12230 0.54846"></Viewpoint>
+        <Transform DEF="Caravela" id="Caravela" translation="0 0 -2">
+            <Transform rotation="1 0 0 1.57">
+                <Shape>
+                    <Appearance>
+                        <TwoSidedMaterial diffuseColor="crimson"></TwoSidedMaterial>
+                    </Appearance>
+                    <Box></Box>
+                </Shape>
+            </Transform>
+        </Transform>
+        <Transform rotation="1 0 0 1.57">
+            <Shape>
+                <Appearance>
+                    <TwoSidedMaterial diffuseColor="steelblue"></TwoSidedMaterial>
+                </Appearance>
+                <Plane size="100,100"></Plane>
+            </Shape>
+        </Transform>
+        <Transform translation="10 10 0">
+            <Shape>
+                <Appearance>
+                    <TwoSidedMaterial diffuseColor="yellow"></TwoSidedMaterial>
+                </Appearance>
+                <Sphere></Sphere>
+            </Shape>
+        </Transform>
+        <TimeSensor DEF="SlowClock" cycleInterval="10" loop="true">
+        </TimeSensor>
+        <PositionInterpolator DEF="Position" key="
+                        0.0
+                        1.0" keyValue="
+                        0 0 -10
+                        0 0 10"></PositionInterpolator>
+        <ROUTE fromNode="SlowClock" fromField="fraction_changed" toNode="Position" toField="set_fraction"></ROUTE>
+        <ROUTE fromNode="Position" fromField="value_changed" toNode="Caravela" toField="translation"></ROUTE>
+
+
+        <TimeSensor DEF="FastClock" cycleInterval="3" loop="true">
+        </TimeSensor>
+        <OrientationInterpolator DEF="Oscilation" key="
+                    0.00
+                    0.35
+                    0.50
+                    0.65
+                    1.00" keyValue="
+                    1 0 1 0.0
+                    1 0 1 0.5
+                    1 0 1 0.0
+                    1 0 1 -0.5
+                    1 0 1 0"></OrientationInterpolator>
+        <ROUTE fromNode="FastClock" fromField="fraction_changed" toNode="Oscilation" toField="set_fraction"></ROUTE>
+        <ROUTE fromNode="Oscilation" fromField="value_changed" toNode="Caravela" toField="rotation"></ROUTE>
+    </Scene>
+</X3D>

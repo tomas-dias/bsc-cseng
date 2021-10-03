@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/base.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de produtos</title>
+
+</head>
+
+<body>
+
+<div class="section-style" id="cabecalho">
+
+<span class="links3">
+<a th:href="@{/admin/add_product}">Adicionar produtos</a>
+<form class="lista" th:action="@{/admin/lista-produtos}" method="POST">
+    <input type="submit" value="lista"/>
+</form>
+<form th:action="@{/admin/current-user}" method="POST">
+    <input type="submit" value="Perfil"/>
+</form>
+</span>
+
+    <form class="sign-out-input" th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
+
+    <a th:href="@{/admin/index}"><img class="logo" th:src="@{/imagens/logo.png}" alt="logo" /></a>
+    <form class="search-style" th:action="@{/admin/new-search}" method="POST">
+        <input type="search" id="search_term" name="search_term" placeholder="pesquise algo..">
+        <input class="style-submit-input" type="submit" value="Pesquisar">
+        <a th:href="@{/admin/advanced_search}">Pesquisa Avançada</a>
+        <!--    <form th:action="@{/shopping-cart}" method="POST">-->
+        <a th:href="@{/shopping-cart-view}"><img class="shopping-cart" th:src="@{/imagens/carrinho.png}" alt="shopping-cart" /></a>
+        <!--    </form>-->
+    </form>
+
+</div>
+
+<div class="section-style" id="categorias">
+
+    <h2>Categorias</h2>
+    <ul>
+        <li><a class="categorias-style" id="c1" th:href="@{/admin/index#consolas}">Consolas</a></li>
+        <li><a class="categorias-style" id="c2" href="#">Videojogos</a></li>
+        <li><a class="categorias-style" id="c3" href="#">Portáteis</a></li>
+        <li><a class="categorias-style" id="c4" href="#">Acessórios</a></li>
+        <li><a class="categorias-style" id="c5" href="#">Tablets</a></li>
+        <li><a class="categorias-style" id="c6" href="#">Smartphones</a></li>
+    </ul>
+
+</div>
+
+<div class="section-style" id="produtos">
+
+    <div id="consolas">
+
+        <h3>Consolas</h3>
+        <dt class="categoria-produtos-hl-style"></dt>
+
+        <a th:href="@{/admin/ps5}"><img class="section-style" th:src="@{/imagens/ps5.jpeg}"></a>
+        <h4><a th:href="@{/admin/ps5}">Consola PS5 (825GB)</a></h4>
+        <p>Mergulha no futuro universo do gaming com as novas Consolas Playstation 5 e Playstation 5 Edição Digital de tirar o fôlego! Associado ao comando sem fio Dual Sense, o headset Pulse 3D e outros acessórios PS5, a Sony criou uma sensação de jogo única para os seus utilizadores com recursos sofisticados. Uma ampla seleção de videojogos está também disponível, como o Homem-Aranha da Marvel, Assassin's Creed Valhalla, NBA 2K21 e Gran Turismo.</p>
+        <span class="price">499.99 €</span>
+        <dt></dt>
+
+        <a th:href="@{/admin/xbox}"><img class="section-style" th:src="@{/imagens/xbox.jpeg}"></a>
+        <h4><a th:href="@{/admin/xbox}">Consola Xbox Series X (1 TB)</a></h4>
+        <p>A Xbox mais poderosa de sempre. O novo sistema SOC (System on a Chip) foi concebido de raiz a pensar no desempenho e na velocidade, com 12 teraflops de potência de processamento, e na compatibilidade das quatro gerações de jogo.</p>
+        <span class="price">499.00 €</span>
+        <dt></dt>
+
+        <a href="#"><img class="section-style" th:src="@{/imagens/ps4.jpeg}"></a>
+        <h4><a href="#">Consola PS4 Pro (1 TB)</a></h4>
+        <p>A PS4 Pro incorpora a última tecnologia para experiências de jogo mais rápidas, nítidas e de maior capacidade de resposta. A consola oferece jogabilidade vibrante, filmes extraordinariamente nítidos e detalhes incríveis. A PS4 Pro inclui tecnologia de vanguarda para oferecer as experiências de jogo mais evoluídas através de taxas de fotogramas mais rápidas e estáveis. Com uma TV 4K, os jogos oferecem precisão visual única. Transmite tudo com resolução máxima 4K no Netflix, no YouTube e numa série de aplicações de entretenimento.</p>
+        <span class="price">349.99 €</span>
+        <dt></dt>
+
+        <a href="#"><img class="section-style" th:src="@{/imagens/xboxs.jpeg}"></a>
+        <h4><a href="#">Consola Xbox Series S (512 GB)</a></h4>
+        <p>A Xbox mais pequena de sempre com um desempenho avançado. A Xbox Velocity Architecture combina um SSD personalizado com a tecnologia do novo sistema SOC (System on a Chip) para proporcionar jogos até 120 FPS na nossa consola mais pequena de sempre. Graças ao SSD personalizado da Xbox Series S, os jogos carregam significativamente mais depressa. Equipado com arquitetura AMD Zen 2 RDNA, o DirectX Raytracing proporciona iluminação e sombras realistas e reflexos precisos para criar mundos mais reais e dinâmicos.</p>
+        <span class="price">299.99 €</span>
+        <dt></dt>
+
+        <a href="#"><img class="section-style" th:src="@{/imagens/nintendo.jpeg}"></a>
+        <h4><a href="#">Consola Portátil Nintendo Switch (32 GB)</a></h4>
+        <p>Uma consola doméstica com a mobilidade duma consola portátil que oferece emoções em casa para um ou vários jogadores e a possibilidade de jogar ao mesmo título onde queiras, quando queiras e com quem queiras. Em casa, Nintendo Switch descansa sobre uma base que liga a consola com o televisor para que jogues com todos os amigos e a família.</p>
+        <span class="price">279.99 €</span>
+        <dt></dt>
+        </ul>
+
+        <div class="center">
+            <div class="pagination">
+
+                <a href="#">&laquo;</a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">&raquo;</a>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="section-style" id="about">
+
+    <a href="#">About this page</a>
+
+</div>
+
+</body>
+</html>

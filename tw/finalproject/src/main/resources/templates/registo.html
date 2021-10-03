@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Criar cliente</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" th:href="@{/base.css}">
+</head>
+<body>
+
+<div class="section-style" id="cabecalho">
+
+<span class="links2">
+<a th:href="@{/user}">Registar</a>
+<a th:href="@{/login}">Login</a>
+</span>
+
+<a th:href="@{/}"><img class="logo" src="imagens/logo.png" alt="logo" /></a>
+<form class="search-style" th:action="@{/new-search}" method="POST">
+<input type="search" id="search_term" name="search_term" placeholder="pesquise algo..">
+<input class="style-submit-input" type="submit" value="Pesquisar">
+<a th:href="@{/advanced_search}">Pesquisa Avançada</a>
+</form>
+<div class="carrinho">
+	<form  th:action="@{/user/shopping-cart}" method="POST">
+	<button><img class="shopping-cart" th:src="@{/imagens/carrinho.png}" alt="shopping-cart" /></button>
+	</form>
+	</div>
+
+</div>
+
+<div class="section-style" id="categorias">
+
+	<h2>Categorias</h2>
+	<ul>
+	<li><a class="categorias-style" id="c1" th:href="@{/#consolas}">Consolas</a></li>
+	<li><a class="categorias-style" id="c2" href="#">Videojogos</a></li>
+	<li><a class="categorias-style" id="c3" href="#">Portáteis</a></li>
+	<li><a class="categorias-style" id="c4" href="#">Acessórios</a></li>
+	<li><a class="categorias-style" id="c5" href="#">Tablets</a></li>
+	<li><a class="categorias-style" id="c6" href="#">Smartphones</a></li>
+	</ul>
+	
+</div>
+
+<div class="section-style" id="registo">
+	<h3>Criar Utilizador</h3>
+	<div class="center">
+	<form method='post' th:action='@{/new-user}'>
+		<input class="registo-input" type="text" id="name"     name="name"     placeholder="Insira o seu nome"/>
+		<input class="registo-input" type="text" id="lastname" name="lastname" placeholder="Insira o seu último nome"/>
+		<input class="registo-input" type="text" id="email"    name="email"    placeholder="Insira o seu email"/>
+		<input class="registo-input" type="text" id="username"    name="username"    placeholder="Insira o seu username"/>
+		<input class="registo-input" type="password" id="password"    name="password"    placeholder="Insira a sua password"/>
+		<input class="registo-input" type="submit" id="submit2" value="Submit">
+	</form>
+	</div>
+
+
+</div>
+
+</body>
+</html>

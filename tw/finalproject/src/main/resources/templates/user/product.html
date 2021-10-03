@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/base.css}">
+    <title>Informação do Produto</title>
+</head>
+<body>
+
+<div class="section-style" id="cabecalho">
+
+<span class="links3">
+<form class="lista" th:action="@{/user/lista-produtos}" method="POST">
+    <input type="submit" value="lista"/>
+</form>
+<form th:action="@{/user/current-user}" method="POST">
+    <input type="submit" value="Perfil"/>
+</form>
+</span>
+
+<form class="sign-out-input" th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+
+<a th:href="@{/user/index}"><img class="logo" th:src="@{/imagens/logo.png}" alt="logo" /></a>
+<form class="search-style" th:action="@{/user/new-search}" method="POST">
+    <input type="search" id="search_term" name="search_term" placeholder="pesquise algo..">
+    <input class="style-submit-input" type="submit" value="Pesquisar">
+    <a th:href="@{/user/advanced_search}">Pesquisa Avançada</a>
+</form>
+<div class="carrinho">
+    <form  th:action="@{/user/shopping-cart}" method="POST">
+        <button><img class="shopping-cart" th:src="@{/imagens/carrinho.png}" alt="shopping-cart" /></button>
+    </form>
+</div>
+
+</div>
+
+<div class="section-style" id="categorias">
+
+    <h2>Categorias</h2>
+    <ul>
+        <li><a class="categorias-style" id="c1" th:href="@{/user/index#consolas}">Consolas</a></li>
+        <li><a class="categorias-style" id="c2" href="#">Videojogos</a></li>
+        <li><a class="categorias-style" id="c3" href="#">Portáteis</a></li>
+        <li><a class="categorias-style" id="c4" href="#">Acessórios</a></li>
+        <li><a class="categorias-style" id="c5" href="#">Tablets</a></li>
+        <li><a class="categorias-style" id="c6" href="#">Smartphones</a></li>
+    </ul>
+
+</div>
+
+<div class="section-style" id="detalhes_produto">
+    <h3 th:text="${name}"></h3>
+    <dt class="categoria-produtos-hl-style"></dt>
+    <h4 class="especificacoes-title-style">Especificações</h4>
+    <div id="especificacoes1">
+        <p th:text="${description}">
+    </div>
+    <dt class="categoria-produtos-hl-style"></dt>
+    <span class="price" th:text="${price}"></span>
+    <div id="inf">
+
+        <p><span class="especificacao-style">Custos de Envio:</span> 0€</p>
+        <p><span class="especificacao-style">Data de Entrega:</span> 2 a 3 dias</p>
+        <form th:action="@{/user/new-order}" method="POST">
+            <label for="pagamento"><span class="especificacao-style">Métodos de Pagamento:</span></label>
+            <select name="payment" id="pagamento">
+                <option>Cartão de Crédito</option>
+                <option>Multibanco</option>
+                <option>MBWAY</option>
+                <option>Paypal</option>
+            </select>
+            <p><span class="especificacao-style">Nº de unidades</span><input type="number" id="quantity" size="1" name="quantity" min="1" max="100" value="1"></p>
+
+            <div class="center">
+
+                <input id="compra" type="submit" th:value="${name}" th:name="name">
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+</body>
+</html>

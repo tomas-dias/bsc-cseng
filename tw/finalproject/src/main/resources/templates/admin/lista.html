@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/base.css}">
+
+<title>Novo Produto Adicionado</title>
+
+</head>
+
+<body>
+
+<div class="section-style" id="cabecalho">
+
+<span class="links3">
+<a th:href="@{/admin/add_product}">Adicionar produtos</a>
+<form th:action="@{/admin/current-user}" method="POST">
+<input type="submit" value="Perfil"/>
+</form>
+</span>
+
+<form class="sign-out-input" th:action="@{/logout}" method="post">
+<input type="submit" value="Sign Out"/>
+</form>
+
+<a th:href="@{/admin/index}"><img class="logo" th:src="@{/imagens/logo.png}" alt="logo" /></a>
+<form class="search-style" th:action="@{/admin/new-search}" method="POST">
+<input type="search" id="search_term" name="search_term" placeholder="pesquise algo..">
+<input class="style-submit-input" type="submit" value="Pesquisar">
+<a href="@{/admin/advanced_search}">Pesquisa Avançada</a>
+<img class="shopping-cart" th:src="@{/imagens/carrinho.png}" alt="shopping-cart" />
+</form>
+
+</div>
+
+<div class="section-style" id="categorias">
+
+<h2>Categorias</h2>
+<ul>
+<li><a class="categorias-style" id="c1" th:href="@{/admin/index#consolas}">Consolas</a></li>
+<li><a class="categorias-style" id="c2" href="#">Videojogos</a></li>
+<li><a class="categorias-style" id="c3" href="#">Portáteis</a></li>
+<li><a class="categorias-style" id="c4" href="#">Acessórios</a></li>
+<li><a class="categorias-style" id="c5" href="#">Tablets</a></li>
+<li><a class="categorias-style" id="c6" href="#">Smartphones</a></li>
+</ul>
+
+</div>
+
+
+<div class="section-style" id="produtos_view">
+<h3>Produtos:</h3>
+<!--<div class="center">-->
+
+<!--<p th:text="'Nome: ' + ${name}" />-->
+<!--<p th:text="'Descrição: ' + ${description}" />-->
+<!--<p th:text="'Preço: ' + ${price}" />-->
+<!--</div>-->
+
+    <table class="tableCenter">
+
+        <tr>
+            <th>Nome do produto</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+        </tr>
+
+        <tr th:each="product: ${lista}">
+            <td th:text="${product.name}"/>
+            <td th:text="${product.description}"/>
+            <td th:text="${product.price}"/>
+        </tr>
+
+    </table>
+
+</div>
+
+</body>
+
+</html>

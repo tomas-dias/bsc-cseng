@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Ciclo de Animação</title>
+        <script>
+        // DRAW MODEL
+        function render(canvas, model) {
+            canvas.innerHTML = // Javascript's template strings
+           `Count: ${model.count};\
+            Time: ${Math.round(model.time / 1000)}s;\
+            Elapsed: ${Math.round(model.dt)}ms;\
+            FPS: ${Math.round(1000 * model.count / model.time)}.`;
+        }
+        function animation_loop() {
+            //
+            let canvas = document.getElementById("counter");
+            //
+            // INIT MODEL
+            //
+            let model = { count: 0, time: 0, dt: 0 };
+            //
+            // ANIMATION STEP
+            //
+            let start = performance.now(); // Record time of animation start
+            let previous = performance.now(); // Record time of previous step
+            //
+            animation_step = function (timestamp) {
+                let progress = timestamp - start; // Time since the start
+                let dt = timestamp - previous; // Time since the previous step
+                previous = timestamp; // Record time of this step
+                //
+                // UPDATE MODEL PARAMETERS
+                //
+                model.count += 1;
+                model.time = progress;
+                model.dt = dt;
+                //
+                // RENDER UPDATED MODEL
+                //
+                render(canvas, model);
+                //
+                // LOOP ANIMATION
+                //
+                requestAnimationFrame(animation_step);
+            }
+            //
+            // START THE ANIMATION CYCLE
+            //
+            requestAnimationFrame(animation_step);
+        }
+        function main() {
+            animation_loop();
+        }
+        </script>
+    </head>
+    <body onload="main()">
+        <p id="counter"></p>
+    </body>
+</html>

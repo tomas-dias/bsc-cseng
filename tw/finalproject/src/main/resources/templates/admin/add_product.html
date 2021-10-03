@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/base.css}">
+
+<title>Adicionar Produto</title>
+
+</head>
+
+<body>
+
+<div class="section-style" id="cabecalho">
+
+<span class="links3">
+    <form class="lista" th:action="@{/admin/lista-produtos}" method="POST">
+        <input type="submit" value="lista"/>
+    </form>
+    <form th:action="@{/admin/current-user}" method="POST">
+        <input type="submit" value="Perfil"/>
+    </form>
+</span>
+        
+<form class="sign-out-input" th:action="@{/logout}" method="post">
+<input type="submit" value="Sign Out"/>
+</form>
+        
+<a th:href="@{/admin/index}"><img class="logo" th:src="@{/imagens/logo.png}" alt="logo" /></a>
+<form class="search-style" th:action="@{/admin/new-search}" method="POST">
+<input type="search" id="search_term" name="search_term" placeholder="pesquise algo..">
+<input class="style-submit-input" type="submit" value="Pesquisar">
+<a href="@{/admin/advanced_search}">Pesquisa Avançada</a>
+<img class="shopping-cart" th:src="@{/imagens/carrinho.png}" alt="shopping-cart" />
+</form>
+
+</div>
+
+<div class="section-style" id="categorias">
+
+<h2>Categorias</h2>
+<ul>
+<li><a class="categorias-style" id="c1" th:href="@{/admin/index#consolas}">Consolas</a></li>
+<li><a class="categorias-style" id="c2" href="#">Videojogos</a></li>
+<li><a class="categorias-style" id="c3" href="#">Portáteis</a></li>
+<li><a class="categorias-style" id="c4" href="#">Acessórios</a></li>
+<li><a class="categorias-style" id="c5" href="#">Tablets</a></li>
+<li><a class="categorias-style" id="c6" href="#">Smartphones</a></li>
+</ul>
+
+</div>
+
+<div class="section-style" id="add_product">
+<h3>Adicionar Produto</h3>
+
+<form method="post" th:action="@{/add-product}">
+
+<div class="center">
+<p>Nome do produto:</p>
+<input type="text" id="product_name" name="product_name" /><br><br>
+<p>Descrição do produto:</p>
+<textarea id="product_description" name="product_description" rows="5" cols="55" maxlength="10000000000"></textarea><br><br>
+<p>Preço do produto:</p>
+<input type="number" id="product_price" name="product_price" min="0.00" step="0.01" /><br><br>
+<input type="submit" value="Submit">
+
+</form>
+</div>
+</div>
+
+</body>
+
+</html>

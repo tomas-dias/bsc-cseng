@@ -1,0 +1,59 @@
+version: "3.9"
+
+services:
+    scraperdb:
+        image: docker.elastic.co/elasticsearch/elasticsearch:7.13.2
+        container_name: elasticsearch
+        environment:
+            - cluster.name=es-docker-cluster
+            - bootstrap.memory_lock=true
+            - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+            - xpack.security.enabled=false
+            - discovery.type=single-node
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+            nofile:
+                soft: 65536
+                hard: 65536
+        cap_add:
+            - IPC_LOCK
+        volumes:
+            - esdata:/usr/share/elasticsearch/data
+        ports:
+            - 9200:9200
+        restart: always
+    apirestdb:
+        image: timescale/timescaledb:latest-pg12
+        container_name: timescale
+        volumes: 
+            - ./data/apirestdb:/var/lib/postgresql/data
+        environment: 
+            - POSTGRES_DB=postgres
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+        restart: always
+    scraper:
+        build: ./scraper
+        container_name: scraper
+        command: python scraper.py
+        volumes: 
+            - ./scraper:/home/scraper
+        depends_on: 
+            - scraperdb
+        restart: always
+    apirest:
+        build: ./apirest
+        container_name: apirest
+        command: python manage.py runserver 0.0.0.0:8000
+        volumes:
+            - ./apirest:/home/apirest
+        ports:
+            - "8000:8000"
+        depends_on:
+            - apirestdb
+        restart: always
+volumes:
+    esdata:
+        driver: local

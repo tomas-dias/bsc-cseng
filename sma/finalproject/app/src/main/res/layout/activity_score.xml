@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".ScoreActivity"
+    android:background="@color/teal_200">
+
+    <TextView
+        android:id="@+id/tv_score_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Score"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/purple_500"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/iv_trophy"
+        android:layout_width="213dp"
+        android:layout_height="333dp"
+        android:contentDescription="image"
+        android:src="@drawable/trofeu" />
+
+    <TextView
+        android:id="@+id/tv_congratulations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Parabéns!"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/purple_500"
+        />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/purple_500"
+        android:text="Username"
+        />
+
+    <TextView
+        android:id="@+id/tv_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="Score: 9/10"
+
+        />
+
+
+
+
+    <Button
+        android:id="@+id/button_back_to_main_score"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="100dp"
+        android:gravity="center"
+        android:text="Finish"
+        android:textSize="18sp"
+        android:textColor="@color/purple_500"
+
+        />
+
+</LinearLayout>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/base.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, text/html">
+    <title>Informação de produtos</title>
+
+</head>
+
+<body>
+
+<div class="section-style" id="cabecalho">
+
+<span class="links3">
+<a th:href="@{/admin/add_product}">Adicionar produtos</a>
+<form class="lista" th:action="@{/admin/lista-produtos}" method="POST">
+    <input type="submit" value="lista"/>
+</form>
+<form th:action="@{/admin/current-user}" method="POST">
+<input type="submit" value="Perfil"/>
+</form>
+</span>
+
+    <form class="sign-out-input" th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
+
+    <a th:href="@{/admin/index}"><img class="logo" th:src="@{/imagens/logo.png}" alt="logo" /></a>
+    <form class="search-style" th:action="@{/admin/new-search}" method="POST">
+        <input type="search" id="search_term" name="search_term" placeholder="pesquise algo..">
+        <input class="style-submit-input" type="submit" value="Pesquisar">
+        <a th:href="@{/admin/advanced_search}">Pesquisa Avançada</a>
+        <img class="shopping-cart" th:src="@{/imagens/carrinho.png}" alt="shopping-cart" />
+    </form>
+
+</div>
+
+<div class="section-style" id="categorias">
+
+    <h2>Categorias</h2>
+    <ul>
+        <li><a class="categorias-style" id="c1" th:href="@{/admin/index#consolas}">Consolas</a></li>
+        <li><a class="categorias-style" id="c2" href="#">Videojogos</a></li>
+        <li><a class="categorias-style" id="c3" href="#">Portáteis</a></li>
+        <li><a class="categorias-style" id="c4" href="#">Acessórios</a></li>
+        <li><a class="categorias-style" id="c5" href="#">Tablets</a></li>
+        <li><a class="categorias-style" id="c6" href="#">Smartphones</a></li>
+    </ul>
+
+</div>
+
+<div class="section-style" id="detalhes_produto">
+
+    <h3>Consola Xbox Series X (825GB-Branco)</h3>
+    <dt class="categoria-produtos-hl-style"></dt>
+
+    <a th:href="@{/imagens/ps5.jpeg}"><img th:src="@{/imagens/ps5.jpeg}"></a>
+
+    <h4>Jogar Não Tem Limites</h4>
+    <p>A consola PS5™ abre-te novas possibilidades de jogo que nunca imaginaste. Desfruta de um carregamento de jogos quase instantâneo com um SSD ultrarrápido, envolvimento mais profundo com suporte para feedback háptico, gatilhos adaptativos e áudio em 3D, bem como uma nova geração de jogos PlayStation® incríveis.</p>
+
+    <h4>Velocidade relâmpago</h4>
+    <p>Aproveita o poder de uma CPU, GPU e SSD personalizados com um sistema de E/S integrado que reescrevem as regras do que uma consola PlayStation® é capaz fazer.</p>
+
+    <h4>Jogos deslumbrantes</h4>
+    <p>Deixa-te maravilhar por gráficos incríveis e desfruta das novas funcionalidades da PS5™.</p>
+
+    <h4>Imersão arrebatadora</h4>
+    <p>Descobre uma experiência de jogo mais imersiva com suporte para feedback háptico, gatilhos adaptativos e tecnologia de áudio em 3D.</p>
+
+    <dt></dt>
+
+    <h4 class="especificacoes-title-style">Especificações</h4>
+
+    <div id="especificacoes1">
+
+        <p><span class="especificacao-style">Marca:</span> PLAYSTATION</p>
+        <p><span class="especificacao-style">Modelo:</span> Standard</p>
+        <p><span class="especificacao-style">Garantia:</span> 2 anos</p>
+        <p><span class="especificacao-style">Cor:</span> Branco</p>
+        <p><span class="especificacao-style">Plataforma:</span> PS5</p>
+        <p><span class="especificacao-style">Edição:</span> Normal</p>
+        <p><span class="especificacao-style">Mês de Lançamento:</span> Novembro 2020</p>
+        <p><span class="especificacao-style">Ano de lançamento:</span> 2020</p>
+
+    </div>
+
+    <div id="especificacoes2">
+        <p><span class="especificacao-style">Memória RAM:</span> 16GB GDDR6/256-bit</p>
+        <p><span class="especificacao-style">Compatibilidade de Jogos:</span> PS4 PS5</p>
+        <p><span class="especificacao-style">Compatibilidade de Acessórios:</span> PS5</p>
+        <p><span class="especificacao-style">Saída Áudio:</span> Não</p>
+        <p><span class="especificacao-style">Suportes de leitura:</span> 4K UHD Blu-ray</p>
+        <p><span class="especificacao-style">Comandos Incluídos:</span> 1</p>
+        <p><span class="especificacao-style">Mais Informações:</span> CPU 8x Zen 2 Cores a 3.5GHz (frequência variável)</p>
+        <p><span class="especificacao-style">GPU:</span> 10.28 TFLOPs, 36 CUs a 2.23GHz (frequência variável) RDNA 2 personalizada</p>
+
+    </div>
+
+    <dt></dt>
+
+    <span class="price">499.99 €</span>
+
+
+</div>
+
+<div class="section-style" id="about">
+
+    <a href="#">About this page</a>
+
+</div>
+
+</body>
+</html>

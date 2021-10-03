@@ -1,0 +1,290 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D
+        profile="Immersive"
+        version="3.3"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
+        xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd">
+    <Scene>
+        <NavigationInfo headlight='false'> </NavigationInfo>
+        <Viewpoint position="7.15664 3.72576 -6.47312" orientation="-0.00586 0.99987 0.01490 2.36451"></Viewpoint>
+        <DirectionalLight on="true" direction="-1 0 -1" intensity="1.0" color="1.0 0.8 0.6"  shadowIntensity="1.0"></DirectionalLight>
+        <PointLight on='true' intensity='1.0' color='1.0 1.0 0.75' location='50 0.5 0' radius='100' shadowIntensity="1.0">
+        </PointLight>
+        <Background
+            topUrl="media/top_bg.png"
+            backUrl="media/back_bg.png"
+            leftUrl="media/left_bg.png"
+            frontUrl="media/front_bg.png"
+            rightUrl="media/right_bg.png"
+            bottomUrl="media/bottom_bg.png"
+            ></Background>
+
+        <Switch whichChoice="-1">
+            <!--
+    
+                    MADEIRA
+    
+                -->
+            <CommonSurfaceShader DEF="Madeira:Tabuas">
+                <ImageTexture containerField="diffuseTexture" url="media/TEXD_madeira_1.png">
+                </ImageTexture>
+                <ImageTexture containerField="specularTexture" url="media/TEXS_madeira_1.png">
+                </ImageTexture>
+                <ImageTexture containerField="normalTexture" url="media/TEXN_madeira_1.png">
+                </ImageTexture>
+            </CommonSurfaceShader>
+            <!--
+
+                VELAS
+
+            -->
+            <CommonSurfaceShader DEF="Velas:Tecido">
+                <ImageTexture containerField="diffuseTexture" url="media/TEXD_tecido_0.png">
+                </ImageTexture>
+                <ImageTexture containerField="specularTexture" url="media/TEXS_tecido_0.png">
+                </ImageTexture>
+                <ImageTexture containerField="normalTexture" url="media/TEXN_tecido_0.png">
+                </ImageTexture>
+            </CommonSurfaceShader>
+            <!--
+
+                ONDAS
+
+            -->
+            <CommonSurfaceShader DEF="Ondas" alphaFactor="0.85">
+                <ImageTexture containerField="diffuseTexture" url="media/TEXD_ondas_0.png">
+                </ImageTexture>
+                <ImageTexture containerField="specularTexture" url="media/TEXS_ondas_0.png">
+                </ImageTexture>
+                <ImageTexture containerField="normalTexture" url="media/TEXN_ondas_0.png">
+                </ImageTexture>
+            </CommonSurfaceShader>
+            <!--
+
+                PROA/POPA
+
+            -->
+            <IndexedFaceSet DEF="Proa:GEOM" creaseAngle="0.01" coordIndex="
+                    0 9 8 1 0 -1
+                    1 8 7 2 1 -1
+                    2 7 6 3 2 -1
+                    3 6 5 4 3 -1
+
+                    0 1 11 10 0 -1
+                    10 11 3 4 10 -1
+                    10 2 3 10 -1
+                    10 1 2 10 -1     
+
+                    5 6 13 12 5 -1
+                    6 7 13 6 -1
+                    7 8 13 7 -1
+                    8 9 12 13 9 -1
+
+                    0 10 12 9 0 -1
+                    4 5 12 10 4 -1" texCoordIndex="
+                    0 9 8 1 0 -1
+                    1 8 7 2 1 -1
+                    2 7 6 3 2 -1
+                    3 6 5 4 3 -1
+
+                    0 1 11 10 0 -1
+                    10 11 3 4 10 -1
+                    10 2 3 10 -1
+                    10 1 2 10 -1    
+
+                    5 6 13 12 5 -1
+                    6 7 13 6 -1
+                    7 8 13 7 -1
+                    8 9 12 13 9 -1
+
+                    0 10 12 9 0 -1
+                    4 5 12 10 4 -1">
+                <Coordinate point="
+                        0.9 0.0 -1.
+                        0.9 0.0 -0.5
+                        0.0 0.0 -0.5
+                        -.9 0.0 -0.5
+                        -.9 0.0 -1.
+                        -1. 0.0 -1.
+                        -1. 0.0 0.5
+                        0.0 0.0 1.0
+                        1.0 0.0 0.5
+                        1.0 0.0 -1.
+
+                        0.0 1.9 -1.25
+                        0.0 1.9 -.5
+
+                        0.0 2.0 -1.25
+                        0.0 2.0 -.5">
+                </Coordinate>
+                <TextureCoordinate point="
+                        0.9 -1.
+                        0.9 0.5
+                        0.0 0.9
+                        -.9 0.5
+                        -.9 -1.
+                        -1. -1.
+                        -1. 0.5
+                        0.0 1.0
+                        1.0 0.5
+                        1.0 -1.
+
+                        0.0 -1.
+                        0.0 -.5
+
+                        0.0 -1.
+                        0.0 -.5">
+                </TextureCoordinate>
+            </IndexedFaceSet>
+            <!--
+
+                CENTRO
+
+            -->
+            <Extrusion DEF="Centro:GEOM" convex="false" crossSection="
+                    0.9 -1.
+                    0.9 -0.5
+                    0.0 -0.5
+                    -.9 -0.5
+                    -.9 -1.
+                    -1. -1.
+                    -1. 0.5
+                    0.0 1.0
+                    1.0 0.5
+                    1.0 -1.
+                    0.9 -1." spine="
+                    0 -1 0
+                    0 -.9 0
+                    0 -.5 0
+                    0 0 0
+                    0 .5 0
+                    0 .9 0
+                    0 1 0" scale="
+                    1 1
+                    1.1 1
+                    1.2 1
+                    1.25 1
+                    1.2 1
+                    1.1 1
+                    1 1">
+            </Extrusion>
+            <!--
+
+                MASTRO + VELAS
+
+            -->
+            <Group DEF="Mastro:GROUP">
+                <Shape>
+                    <Appearance>
+                        <X3DAppearanceChildNode use="Madeira:Tabuas"></X3DAppearanceChildNode>
+                    </Appearance>
+                    <Cylinder radius="0.05" height="3"></Cylinder>
+                </Shape>
+                <Transform translation="0 0.4 0.1" rotation="0 1 0 -0.31">
+                    <Shape>
+                        <Appearance>
+                            <X3DAppearanceChildNode use="Velas:Tecido"></X3DAppearanceChildNode>
+                        </Appearance>
+                        <TriangleSet2D DEF="Mastro.Vela:GEOM" vertices="
+                                1.2 -1
+                                -1.2 -1
+                                1.2 2">
+                        </TriangleSet2D>
+                    </Shape>
+                    <Shape>
+                        <Appearance>
+                            <X3DAppearanceChildNode use="Velas:Tecido"></X3DAppearanceChildNode>
+                        </Appearance>
+                        <TriangleSet2D DEF="Mastro.Vela:GEOM" ccw="false" vertices="
+                                1.2 -1
+                                1.2 2
+                                -1.2 -1">
+                        </TriangleSet2D>
+                    </Shape>
+                </Transform>
+            </Group>
+        </Switch>
+        <!--
+
+            CARAVELA
+
+        -->
+        <Transform DEF="Caravela">
+            <Transform rotation="1 0 0 1.5">
+                <Transform translation="0 2 0">
+                    <Shape DEF="Popa">
+                        <Appearance>
+                            <X3DAppearanceChildNode use="Madeira:Tabuas"></X3DAppearanceChildNode>
+                        </Appearance>
+                        <X3DGeometryNode use="Proa:GEOM"></X3DGeometryNode>
+                    </Shape>
+                </Transform>
+                <Transform scale="1 2 1">
+                    <Shape DEF="Centro">
+                        <Appearance>
+                            <X3DAppearanceChildNode use="Madeira:Tabuas"></X3DAppearanceChildNode>
+                            <TextureTransform rotation="1.57" scale="2 8"></TextureTransform>
+                        </Appearance>
+                        <X3DGeometryNode use="Centro:GEOM"></X3DGeometryNode>
+                    </Shape>
+                </Transform>
+                <Transform translation="0 -2 0">
+                    <Group DEF="Proa">
+                        <Transform rotation="0 0 1 3.14">
+                            <Shape>
+                                <Appearance>
+                                    <X3DAppearanceChildNode use="Madeira:Tabuas"></X3DAppearanceChildNode>
+                                </Appearance>
+                                <X3DGeometryNode use="Proa:GEOM"></X3DGeometryNode>
+                            </Shape>
+                        </Transform>
+                        <Transform translation="0 -1 -1.2" scale="1 1 0.4">
+                            <Shape>
+                                <Appearance>
+                                    <X3DAppearanceChildNode use="Madeira:Tabuas"></X3DAppearanceChildNode>
+                                </Appearance>
+                                <Box></Box>
+                            </Shape>
+                        </Transform>
+                    </Group>
+                </Transform>
+                <Transform rotation="0 0 1 -1.57" translation="0 0 -3">
+                    <Transform rotation="1 0 0 -1.57" scale="2 2 2">
+                        <Group DEF="Mastros">
+                            <Transform DEF="Mastro.Maior">
+                                <X3DGroupingNode use="Mastro:GROUP"></X3DGroupingNode>
+                            </Transform>
+                            <Transform DEF="Mastro.Menor" scale="0.7 0.7 0.7" translation="-1 -0.35 0">
+                                <X3DGroupingNode use="Mastro:GROUP"></X3DGroupingNode>
+                            </Transform>
+                        </Group>
+                    </Transform>
+                </Transform>
+            </Transform>
+        </Transform>
+        <!--
+
+        MAR
+
+        -->
+        <Transform DEF = "TheSea" rotation="1 0 0 -1.57">
+            <Shape>
+                <Appearance DEF = "SeaTOP">
+                    <X3DAppearanceChildNode use="Ondas"></X3DAppearanceChildNode>
+                    <TextureTransform scale="50 50"></TextureTransform>
+                </Appearance>
+                <Disk2D outerRadius="500"></Disk2D>
+            </Shape>
+            <Transform rotation="1 0 0 3.14">
+                <Shape>
+                    <Appearance DEF = "SeaBOT">
+                        <X3DAppearanceChildNode use="Ondas"></X3DAppearanceChildNode>
+                        <TextureTransform scale="50 50"></TextureTransform>
+                    </Appearance>
+                    <Disk2D outerRadius="500"></Disk2D>
+                </Shape>
+            </Transform>
+        </Transform>
+    </Scene>
+</X3D>

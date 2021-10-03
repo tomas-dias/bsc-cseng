@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/base.css}">
+</head>
+<body>
+
+<div class="section-style" id="cabecalho">
+
+<span class="links3">
+<a th:href="@{/admin/add_product}">Adicionar produtos</a>
+<form class="lista" th:action="@{/admin/lista-produtos}" method="POST">
+    <input type="submit" value="lista"/>
+</form>
+</span>
+
+    <form class="sign-out-input" th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
+
+    <a th:href="@{/admin/index}"><img class="logo" th:src="@{/imagens/logo.png}" alt="logo" /></a>
+    <form class="search-style" th:action="@{/admin/new-search}" method="POST">
+        <input type="search" id="search_term" name="search_term" placeholder="pesquise algo..">
+        <input class="style-submit-input" type="submit" value="Pesquisar">
+        <a th:href="@{/admin/advanced_search}">Pesquisa Avançada</a>
+        <img class="shopping-cart" th:src="@{/imagens/carrinho.png}" alt="shopping-cart" />
+    </form>
+
+</div>
+
+<div class="section-style" id="categorias">
+
+    <h2>Categorias</h2>
+    <ul>
+        <li><a class="categorias-style" id="c1" th:href="@{/admin/index#consolas}">Consolas</a></li>
+        <li><a class="categorias-style" id="c2" href="#">Videojogos</a></li>
+        <li><a class="categorias-style" id="c3" href="#">Portáteis</a></li>
+        <li><a class="categorias-style" id="c4" href="#">Acessórios</a></li>
+        <li><a class="categorias-style" id="c5" href="#">Tablets</a></li>
+        <li><a class="categorias-style" id="c6" href="#">Smartphones</a></li>
+    </ul>
+
+</div>
+
+<div class="section-style" id="informacao-perfil">
+    <h3>Perfil</h3>
+    <div id="perfil">
+        <dt class="categoria-produtos-hl-style"></dt>
+        <span class="especificacao-style">Name: </span>
+        <span class="perfil" th:text="${name}" />
+        <br class="breakline">
+        <span class="especificacao-style">Last name: </span>
+        <span class="perfil" th:text="${lastname}" />
+        <br class="breakline">
+        <span class="especificacao-style">Email: </span>
+        <span class="perfil" th:text="${email}" />
+        <br class="breakline">
+        <span class="especificacao-style">Username: </span>
+        <span class="perfil" th:text="${username}" />
+        <br class="breakline">
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,539 @@
+/* Base da página web (Cabeçalho, Categorias e About this page) */
+
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("imagens/padrao2.jpg");
+    height: 100%;
+    margin: 2.5% auto;
+    max-width: 1028px;
+}
+
+a {
+    color: lightskyblue;
+    text-decoration: none;
+}
+
+p, li {
+    color: white;
+    display: block;
+    font-size: small;
+    margin: 0px 10px;
+    text-align: justify;
+}
+
+dt {
+    border-color: rgb(34, 38, 39);
+    border-top: 1px solid white;
+    margin: 20px 0px;
+}
+
+h2 {
+    color: rgb(0, 148, 247);
+    font-weight: bolder;
+}
+
+h3 {
+    color: lightskyblue;
+    font-size: larger;
+    text-align: center;
+}
+
+h4 {
+    font-size: medium;
+}
+
+.section-style {
+    border: 3px solid rgb(0, 148, 247);
+}
+
+#cabecalho {
+    background-color: #11191c;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+    width: 100%;
+}
+
+#cabecalho button{
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*optional*/
+    /*input has OS specific font-family*/
+    color: #069;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.logo {
+    float: left;
+    width: 250px;
+    margin-right: 10px;
+}
+
+
+.links {
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 100px;
+    margin-right: 20px;
+}
+
+.links2{
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.links3{
+    display:inline-flex;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 100px;
+    margin-right: 20px;
+}
+
+.lista{
+    margin-right: 10px;
+}
+
+.sign-out-input {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.search-style {
+    align-items: center;
+    display: flex; /* Para Firefox - display: -moz-flex; */
+    margin-top: 105px;
+    position: absolute;
+    left: 250px;
+    width: calc(95% - 250px);
+}
+
+.shopping-cart {
+    width: 50px;
+    
+}
+
+#carrinho{
+    height: 450px;
+}
+
+.carrinho{
+    margin-top: 120px;
+    float: right;
+    margin-right: 20px;
+}
+
+.totalPrice{
+    margin-left: 42%;
+    margin-top: 30px;
+}
+
+.totalPrice p{
+    color: lightskyblue;
+    font-size: medium;
+    font-weight: bold;
+}
+
+#search_term {
+    color: black;
+    padding: 10px;
+    width: 70%;
+}
+
+.style-submit-input {
+    background-color: rgb(236, 236, 236);
+    color: rgb(0, 148, 247);
+    font-weight: bold;
+    padding: 10px 20px;
+    transition-duration: 0.5s;
+}
+
+.style-submit-input:hover {
+    background-color: rgb(0, 148, 247);
+    color: white;
+}
+
+#cabecalho a {
+    color: rgb(0, 148, 247);
+    display: inline;
+    font-weight: bold;
+    margin: 0px 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#cabecalho a:hover {
+    color: white;
+}
+
+#categorias {
+    background-color: #11191c;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: 205px;
+}
+
+#categorias h2 {
+   margin-bottom: 50px;
+   text-align: center;
+}
+
+#categorias ul {
+    list-style-image: url("imagens/iconr.png");
+    color: rgb(0, 148, 247);
+}
+
+#categorias a {
+    text-align: left;
+}
+
+#c1 {
+    color: lightskyblue;
+    font-weight: bold;
+}
+
+.categorias-style {
+    color: white;
+}
+
+#categorias li {
+    display: list-item;
+    font-size: medium;
+    margin-bottom: 25px;
+    
+}
+
+#about {
+    background-color: #11191c;
+    border-color: #11191c;
+    border-top: 1px solid rgb(0, 148, 247); 
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+}
+
+#about a {
+    color: rgb(0, 148, 247);
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* Lista de produtos */
+
+#produtos, #pesquisa_avancada, #detalhes_produto, #registo, #login, #informacao-perfil, #carrinho, #pesquisa, #add_product, #produtos_view{   
+    background-color: #11191c;
+    display: flow-root;
+    margin-bottom: 20px;
+    height: auto;
+    width: auto;
+}
+
+#produtos_view p{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#produtos_view{
+    height: auto;
+}
+
+#add_product p{
+    text-align: center;
+    color: lightskyblue;
+    font-size: medium;
+}
+
+#add_product .center{
+    margin-bottom: 20px;
+}
+
+#pesquisa{
+    height: 450px;
+}
+
+
+tr, th, td{
+    margin: 20px;
+    color: white;
+    padding: 20px;
+}
+
+th{
+    color:lightskyblue;
+}
+
+
+.tableCenter{
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.perfil{
+    color: white;
+}
+
+.breakline{
+    margin-bottom: 20px;
+}
+
+#perfil{
+    text-align: center;
+}
+
+#produtos img {
+    float: left;
+    border-radius: 16px;
+    margin: 10px 10px;
+    width: 227px;
+}
+
+.categoria-produtos-hl-style {
+    border-top: 1px solid lightskyblue;
+}
+
+.registo-input{
+    margin-bottom: 20px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.logout{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#registo, #produtos_view{
+    height: 450px;
+}
+
+#login input{
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+.login{
+    text-align: center;
+    color: lightskyblue;
+}
+
+.login label{
+    font-size: medium;
+}
+
+#login{
+    height: 400px;
+}
+
+.price {
+    clear: left;
+    color: red;
+    display: block;
+    font-family: sans-serif;
+    font-size: x-large;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+
+.pagination {
+    display: inline-block;
+    margin: 20px 0px;
+}
+
+.pagination a {
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.active {
+    background-color: rgb(0, 148, 247);
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: rgb(143, 143, 143);
+}
+
+/* Pesquisa Avançada */
+
+#pesquisa_avancada p {
+    margin: 10px 10px;
+}
+
+#pesquisa_avancada li, #pesquisa_avancada p, #cat, #local{
+    color: lightskyblue;
+    font-weight: bold;
+    font-size: large;
+}
+
+#pesquisa_avancada textarea {
+    display: block;
+    text-align: justify;
+    margin: 0px 10px;
+}
+
+#cat, #local{
+    display: block;
+    margin: 0px 10px;
+    margin-bottom: 10px;
+}
+
+#pesquisa_avancada input{
+    display: block;
+    width: 150px;
+    margin-top: 10px;
+}
+
+#preco {
+    margin-bottom: 10px;
+}
+
+#pesquisa_avancada select, #submit, #reset{
+    margin-left: 10px;
+    width: 150px;
+}
+
+#submit, #reset{
+    margin-top: 10px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+/* Informação do produto */
+
+#detalhes_produto img {
+    float: left;
+    border-radius: 16px;
+    margin: 10px 10px;
+    width: 300px;
+}
+
+#detalhes_produto h4 {
+    color: lightskyblue;
+    margin-left: 10px;
+}
+
+#detalhes_produto p {
+    margin-left: 10px;
+}
+
+.especificacoes-title-style {
+    text-align: left;
+}
+
+#quantity {
+    margin-left: 10px;
+}
+
+#compra {
+    margin: 20px;
+    height: 50px;
+    width: 180px;
+}
+
+#especificacoes1, #especificacoes2 {
+    display: inline-block;
+}
+
+.especificacao-style {
+    color: lightskyblue;
+}
+
+label {
+    font-size: small;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+select, #inf p {
+    margin-bottom: 5px;
+}
+
+@media screen and (min-width: 480px) {
+
+    #produtos img {
+        width: 124px;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    #detalhes_produto img {
+        margin: 10px 0px;
+        width: 550px;
+    }
+
+}
+
+@media screen and (min-width: 600px) {
+
+    #detalhes_produto img {
+        width: 180px;
+    }
+
+}
+
+@media screen and (min-width: 690px) {
+
+    #produtos img {
+        width: 227px;
+    }
+
+}
+
+@media screen and (max-width: 750px) {
+    
+    #categorias {
+        align-items: center;
+        float: none;
+        height: 150px;
+        width: 100%;
+    }
+
+    #categorias h2 {
+        margin-bottom: 25px;
+    }
+
+    #categorias li {
+        display: inline;
+        margin: 1.5px;
+        text-align: center;
+    }
+
+    #produtos {
+        clear: left;
+        width: 100%;
+    }
+
+    textarea {
+        height: 5em;
+        width: 25em;
+    }
+
+}

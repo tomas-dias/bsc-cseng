@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "878871890920",
+    "project_id": "kicksser-a821f",
+    "storage_bucket": "kicksser-a821f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878871890920:android:4eb7869aa271c71d65325d",
+        "android_client_info": {
+          "package_name": "com.example.kicksser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "878871890920-q9vebpgs9vs7g9o3t97939kehp6jsjai.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kicksser",
+            "certificate_hash": "3e600d796963273e54cab716fd1132568656dd07"
+          }
+        },
+        {
+          "client_id": "878871890920-htgc6llrc017m3lon0hm6gtedu5jjvnb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAak-ky37umulAeRd_BKjj1BDDY-YJXYXQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "878871890920-htgc6llrc017m3lon0hm6gtedu5jjvnb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

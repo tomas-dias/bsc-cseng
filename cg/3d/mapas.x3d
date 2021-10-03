@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile="Full" version="4.0" xmlns:xsd="https://www.w3.org/TR/xmlschema-1/" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd">
+    <Scene>
+        <!--                    
+            General scene setup
+        -->
+        <PointLight radius="500" intensity="2" location="-200 100 300" color="1 0.9 0.7"></PointLight>
+
+        <NavigationInfo headlight="false"></NavigationInfo>
+
+        <Viewpoint position="0.03732 -0.03733 3.04140" orientation="0.70710 0.70710 -0.00434 0.01735" zNear="0.43159" zFar="5.98569"></Viewpoint>
+        <!--
+            Auxiliary nodes
+        -->
+        <Switch whichChoice="-1">
+            <Sphere DEF="earth-geom" radius="1"></Sphere>
+            <Box DEF="earth-geom-alt" size="3 3 3"></Box>
+        </Switch>
+        <Transform DEF="earth">
+            <Switch whichChoice="4">
+                <Transform DEF="earth_mono">
+                    <Shape>
+                        <Appearance>
+                            <Material diffuseColor="steelblue"></Material>
+                        </Appearance>
+                        <X3DGeometryNode use="earth-geom" />
+                    </Shape>
+                </Transform>
+
+                <Transform DEF="earth_diffuse">
+                    <Shape>
+                        <Appearance>
+                            <CommonSurfaceShader>
+                                <ImageTexture containerField="diffuseTexture" url="media/earth_surface.jpg"></ImageTexture>
+                            </CommonSurfaceShader>
+                        </Appearance>
+                        <X3DGeometryNode use="earth-geom" />
+                    </Shape>
+                </Transform>
+                
+                <Transform DEF="earth_specular">
+                    <Shape>
+                        <Appearance>
+                            <CommonSurfaceShader>
+                                <ImageTexture containerField="diffuseTexture" url="media/earth_surface.jpg"></ImageTexture>
+                                <ImageTexture containerField="specularTexture" url="media/earth_specular.jpg"></ImageTexture>
+                            </CommonSurfaceShader>
+                        </Appearance>
+                        <X3DGeometryNode use="earth-geom" />
+                    </Shape>
+                </Transform>
+                
+                <Transform DEF="earth_normals">
+                    <Shape>
+                        <Appearance>
+                            <CommonSurfaceShader>
+                                <ImageTexture containerField="diffuseTexture" url="media/earth_surface.jpg"></ImageTexture>
+                                <ImageTexture containerField="normalTexture" url="media/earth_normals.jpg"></ImageTexture>
+                            </CommonSurfaceShader>
+                        </Appearance>
+                        <X3DGeometryNode use="earth-geom" />
+                    </Shape>
+                </Transform>
+                
+                <Transform DEF="earth_multi">
+                    <Shape>
+                        <Appearance>
+                            <CommonSurfaceShader>
+                                <ImageTexture containerField="diffuseTexture" url="media/earth_surface.jpg"></ImageTexture>
+                                <ImageTexture containerField="specularTexture" url="media/earth_specular.jpg"></ImageTexture>
+                                <ImageTexture containerField="normalTexture" url="media/earth_normals.jpg"></ImageTexture>
+                            </CommonSurfaceShader>
+                        </Appearance>
+                        <X3DGeometryNode use="earth-geom" />
+                    </Shape>
+                </Transform> 
+            </Switch>
+        </Transform>
+        <!--
+            Animation
+        -->
+        <TimeSensor DEF="tictoc" cycleInterval="18" loop="true"></TimeSensor>
+        <OrientationInterpolator DEF="earthRotation" key="0.00 0.25 0.50 0.75 1.00" keyValue="
+                        0 1 0 0.0000000000
+                        0 1 0 1.5707963268
+                        0 1 0 3.1415926536
+                        0 1 0 4.7123889804
+                        0 1 0 6.2831853072"></OrientationInterpolator>
+        <Route fromNode="tictoc" fromField="fraction_changed" toNode="earthRotation" toField="set_fraction"></Route>
+        <Route fromNode="earthRotation" fromField="value_changed" toNode="earth" toField="rotation"></Route>
+    </Scene>
+</X3D>

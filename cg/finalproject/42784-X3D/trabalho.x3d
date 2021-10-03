@@ -1,0 +1,211 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "http://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D>
+    <scene>
+        <extrusion
+        id = "ecrageo"
+        crossSection = 
+        "0.10  0
+         0.8   0
+         0.823 0.05
+         0.82  0.07
+         0.85  0.11
+         0.87  0.15
+         0.888 0.2
+         0.906 0.3
+         0.908 0.4
+         0.9   0.47
+         0.88  0.55
+         0.85  0.62
+         0.8   0.667
+         0.7   0.705
+         0.6   0.72
+         0.34  0.72
+         0.2   0.705
+         0.1   0.667
+         0.053 0.62
+         0.026 0.55
+         0.007 0.47
+        -0.001 0.4
+         0.001 0.3
+         0.019 0.2
+         0.029 0.15
+         0.049 0.11
+         0.079 0.07
+         0.082 0.05
+         0.10  0"
+        spine =
+        "0 0.75 0
+         0  1 0"
+        scale =
+        "1 1
+         1 1">
+        </extrusion>
+        <extrusion
+        id = "mesageo"
+        crossSection =
+       "-0.1 0
+        -0.1 0.6
+         1.1 0.6
+         1.1 0
+         1   0
+         1   0.5
+         0.5 0.5
+         0.5 0.3
+         0   0.3
+         0   0
+        -0.1 0"
+         spine =
+         "0 0.5 0
+          0  1 0"
+         scale =
+         "1 1
+          1 1">
+        </extrusion>
+        <commonsurfaceshader def = "madeira">
+            <imagetexture containerField = "diffuseTexture" url = "media/textura_madeira.png"></imagetexture>
+            <imagetexture containerField = "normalTexture" url = "media/textura_madeira_normal.png"></imagetexture>
+        </commonsurfaceshader>
+        <transform translation = "0 -2 -2" scale = "1 1 1">
+            <transform def = "mesa" id = "mesa" translation = "-2 -1.45 4" scale = "4 4 4" rotation = "1 0 0 -1.570796">
+                <shape>
+                    <appearance>
+                        <x3dappearancechildnode use = "madeira"></x3dappearancechildnode>
+                    </appearance>
+                    <x3dgeometrynode use = "mesageo"></x3dgeometrynode>
+                </shape>
+                <transform scale = "0.3 0.15 0.1375" translation = "0.2 0.63 0.45" rotation = "1 0 0 1.570796">
+                    <shape>
+                        <appearance>
+                            <imagetexture url = "media/textura_gaveta.png"></imagetexture>
+                        </appearance>
+                        <IndexedFaceSet
+                            coordIndex="
+                            0 1 2 3 -1"
+                            texCoordIndex="
+                            0 1 2 3 -1">
+                            <Coordinate point="
+                            -1 -1 +1
+                            +1 -1 +1
+                            +1 +1 +1
+                            -1 +1 +1">
+                            </Coordinate>
+                            <TextureCoordinate point="
+                            0.00 0.00
+                            1.00 0.00
+                            1.00 1.00
+                            0.00 1.00">
+                            </TextureCoordinate>
+                        </IndexedFaceSet>
+                    </shape>
+                </transform>
+            </transform>
+            <transform def = "televisao" id = "televisao" translation = "0 2 1" scale = "0.75 0.75 0.75">
+                <transform translation = "-1.99 -1.5 3.5" scale = "4.4 4 4.2" rotation = "1 0 0 -1.570796">
+                    <shape>
+                        <appearance>
+                            <twosidedmaterial diffuseColor = "#f73b00"></twosidedmaterial>
+                        </appearance>
+                        <x3dgeometrynode use = "ecrageo"></x3dgeometrynode>
+                    </shape>
+                </transform>
+                <transform scale = '0.5 0.5 0.3' rotation = '1 0 0 -1.570796'>
+                    <transform translation='0 0 5' rotation = '0 0 1 -1.570796'>
+                        <shape>
+                            <cylinder />
+                            <appearance>
+                                <material diffuseColor='#f73b00'/>
+                            </appearance>
+                        </shape>
+                    </transform>
+                    <transform scale = '0.2 1.8 0.2' translation='-0.5 0 6' rotation = '1 0 0.3 -1.5'>
+                        <shape>
+                            <cylinder />
+                            <appearance>
+                                <material diffuseColor='#0077c2'/>
+                            </appearance>
+                        </shape>
+                    </transform>
+                    <transform scale = '0.2 1.8 0.2' translation='0.5 0 6' rotation = '1 0 -0.3 -1.5'>
+                        <shape>
+                            <cylinder />
+                            <appearance>
+                                <material diffuseColor='#0077c2'/>
+                            </appearance>
+                        </shape>
+                    </transform>
+                    <transform translation = '-1.1 -0.2 8' scale = '1 1 1.5'>
+                        <shape>
+                            <sphere radius = '0.4' />
+                            <appearance>
+                                <material diffuseColor = '#0077c2'/>
+                            </appearance>
+                        </shape>
+                    </transform>
+                    <transform translation = '1.1 -0.2 8' scale = '1 1 1.5'>
+                        <shape>
+                            <sphere radius = '0.4' />
+                            <appearance>
+                                <material diffuseColor = '#0077c2'/>
+                            </appearance>
+                        </shape>
+                    </transform>
+                    <shape>
+                        <appearance>
+                            <ImageTexture url="media/textura_ecra.png"></ImageTexture>
+                        </appearance>
+                        <IndexedFaceSet
+                           coordIndex="
+                           0 1 2 3 -1"
+                           texCoordIndex="
+                           0 1 2 3 -1">
+                          <Coordinate point="
+                          -4 -1.02 -5
+                          +4 -1.02 -5
+                          +4 -1.02 +5
+                          -4 -1.02 +5">
+                          </Coordinate>
+                          <TextureCoordinate point="
+                           0.00 0.00
+                           1.00 0.00
+                           1.00 1.00
+                           0.00 1.00">
+                          </TextureCoordinate>
+                        </IndexedFaceSet>
+                    </shape>
+                </transform>
+            </transform>
+        </transform>
+        <timesensor def = "clock1" cycleInterval = "4" loop = "true"></timesensor>
+        <positioninterpolator def = "position_televisao" key = "
+                        0.0
+                        1.0" keyValue ="
+                       -10 5 0
+                        0  2.1 1"></positioninterpolator>
+        <route fromNode="clock1" fromField="fraction_changed" toNode="position_televisao" toField="set_fraction"></route>
+        <route fromNode="position_televisao" fromField="value_changed" toNode="televisao" toField="translation"></route>
+
+        <timesensor def = "clock2" cycleInterval = "2" loop = "true"></timesensor>
+        <orientationinterpolator def = "oscilation_televisao" key = "
+                        0.00
+                        0.25
+                        0.50
+                        0.75
+                        1.00" keyValue ="
+                        1 0 1 0.0
+                        1 0 1 -0.5
+                        1 0 1 0.0
+                        1 0 1 0.5
+                        1 0 1 0.0"></orientationinterpolator>
+        <route fromNode="clock2" fromField="fraction_changed" toNode="oscilation_televisao" toField="set_fraction"></route>
+        <route fromNode="oscilation_televisao" fromField="value_changed" toNode="televisao" toField="rotation"></route>
+
+        <positioninterpolator def = "position_mesa" key = "
+                        0.0
+                        1.0" keyValue ="
+                        -2 -6 4
+                        -2  -1.5 4"></positioninterpolator>
+        <route fromNode="clock1" fromField="fraction_changed" toNode="position_mesa" toField="set_fraction"></route>
+        <route fromNode="position_mesa" fromField="value_changed" toNode="mesa" toField="translation"></route>
+    </scene>
+</X3D>

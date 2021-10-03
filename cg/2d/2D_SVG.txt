@@ -1,0 +1,34 @@
+// Objetos básicos
+
+Linha reta: entre x1,y1 e x2,y2: <line x1 = "..." y1 = "..." x2 = "..." y2 = "..." ... />
+Retângulo: em x,y e de tamanho width x height: <rect x = "..." y = "..." width = "..." height = "..." ... />
+Círculo: de centro cx,cy e raio r: <circle cx = "..." cy = "..." r = "..." ... />
+
+// Caminhos
+
+Iniciar: <path d = "..." />
+Mover: para x,y: M x y ou m x y
+Linha: para x,y: L x y ou l x y;
+Quadrática: para x,y com controlo em cx,cy: Q cx cy x y ou q cx cy x y
+Cúbica: para x,y com controlos cx1,cy1 e cx2,cy2: C cx1 cy1 cx2 cy2 x y ou c cx1 cy1 cx2 cy2 x y
+Fechar: para o ponto inicial Z ou z
+
+A diferença entre os comandos M,L,Q,C,Z e m,l,q,c,z é que no primeiro caso as coordenadas são absolutas (no espaço do objeto) enquanto que no segundo (com movimentos em minúsculas) as coordenadas são relativas ao ponto atual.
+
+// Reutilizar objetos básicos
+
+1º - Definir (em <defs>) e identificar (id = "...") um objeto “modelo” (no sentido de template, e não de model), que não é mostrado
+2º - Usar (<use xlink:href="#..." />) esse “modelo”
+
+// Transformações
+
+Translação: transform = "translate(dx,dy)"
+Rotação: transform = "rotate(deg)"
+Escala: transform = "scale(sx,sy)"
+Composição: obtém-se encadeando várias transformações. Por exemplo: transform = "rotate(35)scale(0.5, 2.1)" faz primeiro a transformação de escala e depois a rotação (nb que as transformações são aplicadas da direita para a esquerda)
+
+// Tintas
+
+Gradientes e Mosaicos:
+1º - É definido (em <defs>) um gradiente (<linearGradient>, <radialGradient>) ou um “padrão” (<pattern>) [por exemplo <linearGradient id = "grad1" ... >]
+2º - No objeto que se pretende pintar, define-se o atributo de enchimento [por exemplo, fill = "url(#grad1)"]

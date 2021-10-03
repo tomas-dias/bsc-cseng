@@ -1,0 +1,3 @@
+admin admin oper 
+tomas pass regs 
+rui pass2 regs 

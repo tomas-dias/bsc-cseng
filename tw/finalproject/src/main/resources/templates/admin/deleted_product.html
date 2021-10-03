@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/base.css}">
+    <title>Produto eliminado</title>
+</head>
+<body>
+
+<div class="section-style" id="cabecalho">
+
+<span class="links3">
+<a th:href="@{/admin/add_product}">Adicionar produtos</a>
+<form th:action="@{/admin/current-user}" method="POST">
+<input type="submit" value="Perfil"/>
+</form>
+</span>
+
+    <form class="sign-out-input" th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
+
+    <a th:href="@{/admin/index}"><img class="logo" th:src="@{/imagens/logo.png}" alt="logo" /></a>
+    <form class="search-style" th:action="@{/admin/new-search}" method="POST">
+        <input type="search" id="search_term" name="search_term" placeholder="pesquise algo..">
+        <input class="style-submit-input" type="submit" value="Pesquisar">
+        <a href="@{/admin/advanced_search}">Pesquisa Avançada</a>
+        <img class="shopping-cart" th:src="@{/imagens/carrinho.png}" alt="shopping-cart" />
+    </form>
+
+</div>
+
+<p th:text="${name}"></p>
+<p th:text="${price}"></p>
+
+</body>
+</html>

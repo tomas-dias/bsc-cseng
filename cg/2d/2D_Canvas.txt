@@ -1,0 +1,47 @@
+// Objetos básicos
+
+Preencher: context.fillRect(x* do c.s. esquerdo do ret., y* do c.s. esquerdo, comprimento, largura)
+Traçar: context.strokeRect(x*, y*, comprimento, largura)
+Limpar: context.clearRect(x*, y*, comprimento, largura)
+
+// Caminhos
+
+Iniciar: context.beginPath() ou let p = new Path2D()
+Mover: context.moveTo(x, y)
+Linha: context.lineTo(x, y)
+Quadrática: context.quadraticCurveTo(cx, cy, x, y)
+Cúbica: context.bezierCurveTo(cx1, cy1, cx2, cy2, x, y)
+Arco: context.arcTo(cx, cy, x, y, r)
+Outras: context.arc(); context.ellipse(); context.rect();
+Fechar: context.closePath();
+Traçar: context.stroke() ou context.stroke(path);
+Cor do traço: context.strokeStyle = tinta;
+Preencher: context.fill(); context.fill(regra) ou context.fill(path); context.fill(path, regra), com regra = "nonzero" ou "evenodd"
+Cor do preenchimento: context.fillStyle = tinta
+
+// Transformações
+
+Translação: context.translate(dx, dy)
+Rotação: context.rotate(rad)
+Escala: context.scale(sx, sy)
+Geral: context.transform(a, b, c, d, e) correspondente à matriz
+a c e
+b d f
+0 0 1
+Guardar: context.save()
+Repor: context.restore()
+
+// Aspeto
+
+Espessura: context.lineWidth = espessura
+Tracejado: context.setLineDash(segmentos) com segmentos = array[]
+Extremidades: context.lineCap = extremidade com extremidade = "butt", "round" ou "square"
+Junções: context.lineJoin = juncao com juncao = "round", "bevel" ou "miter"
+Controlo das junções: context.miterLimit = limite
+Gradiente:
+1º - let g = context.createLinearGradient(x1,y1,x2,y2); ou let g = context.createRadialGradient(x1,y1,r1,x2,y2,r2)
+2º - g.addColorStop(p,cor); em que p == 0.0 corresponde ao ponto inicial do gradiente (x1,y1), p == 1.0 ao ponto final (x2,y2) e cor é a cor que se deseja colocar no ponto correspondente
+3º - contexto.strokeStyle = g ou contexto.fillStyle = g
+4º - contexto.stroke() ou contexto.fill()
+Traçar(texto): contexto.strokeText(texto, x, y)
+Preencher(texto): contexto.fillText(texto, x,y)
