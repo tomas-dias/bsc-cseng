@@ -1,3 +1,6 @@
+/* Exercise 10 */
+
+
 /* a) */
 select distinct filme.Titulo_O
 from filme, genero1

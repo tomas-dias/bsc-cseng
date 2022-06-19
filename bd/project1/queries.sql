@@ -1,3 +1,6 @@
+/* Exercise 5 */
+
+
 /* a) */
 select distinct taxi.Matricula
 from taxi, modelo

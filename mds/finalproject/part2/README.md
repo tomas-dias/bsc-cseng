@@ -1,4 +1,4 @@
-# ***Relatório da Implementação do Trabalho Prático - Sistema de Registo de Presenças***
+# **MDS Final Project Part 2 Report - Implementation (in Portuguese)**
 
 ## **Introdução**
 
