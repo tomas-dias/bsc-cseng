@@ -18,7 +18,7 @@ This repository contains all projects and assignments done during [Bachelor's De
 
 - **ia**: all about Artificial Intelligence curricular unit.
 
-- **internship**: all about my curricular internship at Department of Informatics of University of Évora.
+- **internship**: all about my curricular internship at [Department of Informatics of University of Évora](https://www.dinf.uevora.pt/).
 
 - **mds**: all about Methods and Software Development curricular unit.
 
