@@ -1,6 +1,6 @@
 # **BSc in Computer Sciences Engineering**
 
-This repository contains all projects and assignments done during [Bachelor's Degree course in Computer Sciences Engineering at University of Évora](https://www.uevora.pt/en/study/courses/bachelors-and-integrated-master-degrees?curso=2570).
+This repository contains all projects and assignments done during [Bachelor's Degree course in Computer Sciences Engineering at University of Évora](https://www.uevora.pt/en/study/courses/bachelors-and-integrated-master-degrees?curso=2570) (2018-2021).
 
 ## **Content**
 

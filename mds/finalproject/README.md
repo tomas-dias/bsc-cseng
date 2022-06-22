@@ -1,4 +1,4 @@
-# **MDS Final Project Directions (in Portuguese)**
+# **MDS Final Project Guidelines (in Portuguese)**
 
 ## **Sistema automático de registo de presenças nas aulas**
 
