@@ -24,6 +24,8 @@ This repository contains all projects and assignments done during [Bachelor's De
 
 - **p1**: all the work carried out in the Programming I curricular unit.
 
+- **p2**: all the work carried out in the Programming II curricular unit.
+
 - **p3**: all the work carried out in the Programming III curricular unit.
 
 - **rc**: all the work carried out in the Computer Networks curricular unit.
