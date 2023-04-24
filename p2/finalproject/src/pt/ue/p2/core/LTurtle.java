@@ -3,8 +3,6 @@ package pt.ue.p2.core;
 import java.awt.*;
 import java.util.List;
 
-import static javax.swing.WindowConstants.HIDE_ON_CLOSE;
-
 import galapagos.Turtle;
 import galapagos.TurtleDrawingWindow;
 import pt.ue.p2.interfaces.Interpreter;
